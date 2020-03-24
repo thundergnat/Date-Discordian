@@ -5,7 +5,7 @@
     "description"   : "Convert Gregorian to Discordian dates",
     "authors"       : [ "Steve Schulze (thundergnat)" ],
     "provides"      : { "Date::Discordian" : "lib/Date/Discordian.pm6" },
-    "depends"       : [ "Lingua::EN:Numbers" ],
+    "depends"       : [ "Lingua::EN::Numbers" ],
     "build-depends" : [ ],
     "test-depends"  : [ "Test" ],
     "source-type"   : "git",

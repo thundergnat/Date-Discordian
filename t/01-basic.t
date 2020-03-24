@@ -2,6 +2,8 @@ use v6;
 use Test;
 use Date::Discordian;
 
+plan 15;
+
 is( discordian( '2020-03-24' ), 'Pungenday, the tenth day of Discord in the YOLD 3186', 'takes a Date-ish string');
 is( discordian( 2021, 8, 15 ), 'Boomtime, the eighth day of Bureaucracy in the YOLD 3187', 'takes Integer args');
 is( discordian( Date.new("2005-01-31") ), 'Sweetmorn, the thirty-first day of Chaos in the YOLD 3171', 'takes a Date');
