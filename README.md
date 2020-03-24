@@ -23,7 +23,7 @@ DESCRIPTION
 
 Exports a single subroutine: `discordian()`. When given a Gregorian date, returns the text description or hash of date elementsof the corresponding Discordian date.
 
-Will accept the same parameters a the internal Date class.
+Will accept the same parameters a the internal Date class. Will also accept the keyword today.
 
 ```perl6
 # Get textual date conversions
@@ -33,7 +33,11 @@ discordian( 2020, 3, 24 ); # Integer year, month, day
 
 discordian( Date.new("2020-03-24") ); # Native Date object
 
-# Get a hash of date elements - supply a truthy value to force hash return values
+discordian( now ); # Instant
+
+discordian( today ); # today
+
+# Get a hash of date elements - supply a truthy second parameter to force hash return values
 my $dd = discordian( '2020-03-24', :h );
 say $dd.<weekday season day yold holy>
 ```

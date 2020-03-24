@@ -1,10 +1,20 @@
 use v6.c;
-unit class Date::Discordian:ver<0.0.1>;
+unit class Date::Discordian:ver<0.0.2>;
 
 use Lingua::EN::Numbers;
 
 multi discordian ( Str $ymd, :$h = False ) is export {
     my $date = Date.new($ymd);
+    __ddate($date, $h)
+}
+
+multi discordian ( Instant $time, :$h = False ) is export {
+    my $date = Date.new($time);
+    __ddate($date, $h)
+}
+
+multi discordian ( 'today', :$h = False ) is export {
+    my $date = Date.today;
     __ddate($date, $h)
 }
 
@@ -16,6 +26,8 @@ multi discordian ( Int $y, Int $m, Int $d, :$h = False ) is export {
 multi discordian ( Date $date, :$h = False ) is export {
     __ddate($date, $h)
 }
+
+sub today is export { Date.today }
 
 sub __ddate ( Date $date, $h ) {
     my @seasons = << Chaos Discord Confusion Bureaucracy 'The Aftermath' >>;
@@ -85,7 +97,7 @@ say discordian( Date.new("2005-01-31") ) # Sweetmorn, the thirty-first day of Ch
 Exports a single subroutine: C<discordian()>. When given a Gregorian date, returns
 the text description or hash of date elementsof the corresponding Discordian date.
 
-Will accept the same parameters a the internal Date class.
+Will accept the same parameters a the internal Date class.  Will also accept the keyword today.
 
 =begin code :lang<perl6>
 
@@ -96,7 +108,11 @@ discordian( 2020, 3, 24 ); # Integer year, month, day
 
 discordian( Date.new("2020-03-24") ); # Native Date object
 
-# Get a hash of date elements - supply a truthy value to force hash return values
+discordian( now ); # Instant
+
+discordian( today ); # today
+
+# Get a hash of date elements - supply a truthy second parameter to force hash return values
 my $dd = discordian( '2020-03-24', :h );
 say $dd.<weekday season day yold holy>
 
