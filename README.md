@@ -33,7 +33,7 @@ discordian( 2020, 3, 24 ); # Integer year, month, day
 
 discordian( Date.new("2020-03-24") ); # Native Date object
 
-# Or get a hash of date elements - supply a truthy value to force hash return values
+# Get a hash of date elements - supply a truthy value to force hash return values
 my $dd = discordian( '2020-03-24', :h );
 say $dd.<weekday season day yold holy>
 ```
