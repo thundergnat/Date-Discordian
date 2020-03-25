@@ -2,7 +2,7 @@ use v6;
 use Test;
 use Date::Discordian;
 
-plan 15;
+plan 17;
 
 is( discordian( '2020-03-24' ), 'Pungenday, the tenth day of Discord in the YOLD 3186', 'takes a Date-ish string');
 is( discordian( 2021, 8, 15 ), 'Boomtime, the eighth day of Bureaucracy in the YOLD 3187', 'takes Integer args');
@@ -20,6 +20,10 @@ is( discordian( '2020-10-24' ), 'Holyday of Maladay: Boomtime, the fifth day of 
 is( discordian( '2020-12-08' ), 'Holyday of Afflux: Boomtime, the fiftieth day of The Aftermath in the YOLD 3186', 'test some holy dates');
 
 my $dd = discordian( '2020-03-24' , :h );
+
+is( discordian(now), discordian(Date.today), 'test Instant');
+
+is( discordian(today), discordian(Date.today), 'test today');
 
 is( $dd<weekday season day yold holy>, 'Pungenday Discord 10 3186 ', 'test hash return');
 
