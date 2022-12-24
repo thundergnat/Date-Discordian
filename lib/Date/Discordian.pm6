@@ -76,11 +76,9 @@ sub __ddate ( Date $date, $h ) {
 
 Date::Discordian - Convert Gregorian Dates to Discordian
 
-[![Build Status](https://travis-ci.org/thundergnat/Date-Discordian.svg?branch=master)](https://travis-ci.org/thundergnat/Date-Discordian)
-
 =head1 SYNOPSIS
 
-=begin code :lang<perl6>
+=begin code :lang<raku>
 
 use Date::Discordian;
 
@@ -99,7 +97,7 @@ the text description or hash of date elementsof the corresponding Discordian dat
 
 Will accept the same parameters a the internal Date class.  Will also accept the keyword today.
 
-=begin code :lang<perl6>
+=begin code :lang<raku>
 
 # Get textual date conversions
 discordian( '2020-03-24' ); # formatted date string (ISO-8601)
@@ -123,7 +121,7 @@ be blank. On St Tib's day, :weekday, :season and :day will be blank.
 
 =head1 AUTHOR
 
-Portions adapted from code from http://rosettacode.org/wiki/Discordian_date#Raku
+Portions adapted from code from L<http://rosettacode.org/wiki/Discordian_date#Raku>
 
 Other code by Steve Schulze
 

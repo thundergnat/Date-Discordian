@@ -1,14 +1,14 @@
+[![Actions Status](https://github.com/thundergnat/Date-Discordian/actions/workflows/test.yml/badge.svg)](https://github.com/thundergnat/Date-Discordian/actions)
+
 NAME
 ====
 
 Date::Discordian - Convert Gregorian Dates to Discordian
 
-[![Build Status](https://travis-ci.org/thundergnat/Date-Discordian.svg?branch=master)](https://travis-ci.org/thundergnat/Date-Discordian)
-
 SYNOPSIS
 ========
 
-```perl6
+```raku
 use Date::Discordian;
 
 say discordian( '2020-03-24' ); # Pungenday, the tenth day of Discord in the YOLD 3186
@@ -25,7 +25,7 @@ Exports a single subroutine: `discordian()`. When given a Gregorian date, return
 
 Will accept the same parameters a the internal Date class. Will also accept the keyword today.
 
-```perl6
+```raku
 # Get textual date conversions
 discordian( '2020-03-24' ); # formatted date string (ISO-8601)
 
@@ -47,7 +47,7 @@ Most likely, some hash elements will be blank. If it isn't a holyday, :holy will
 AUTHOR
 ======
 
-Portions adapted from code from http://rosettacode.org/wiki/Discordian_date#Raku
+Portions adapted from code from [http://rosettacode.org/wiki/Discordian_date#Raku](http://rosettacode.org/wiki/Discordian_date#Raku)
 
 Other code by Steve Schulze
 
